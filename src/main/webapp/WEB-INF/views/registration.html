@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css"  href="/static/css/registration_page.css" th:href="@{/css/registration_page.css}">
+	<title>RegistrationPage</title>
+</head>
+<body th:style="'background:url(' + @{/img/registration_img.jpg} + ');'">
+	<div class="div_ main" >
+		<div class="div_registration_cont">
+			<h1>Registration</h1><br />
+			<div class="div_registration_form">
+					<form action ="#" th:action="@{/registration}" th:object="${CBUser}" id="registerForm" method="post">
+						<div class="div_con1">
+							<div class="div_con2">
+								<label for="username">User name</label>
+								<input type="text" name="username" id="username" th:field="*{userName}"/>
+							</div>
+								<div class="username_err errors" >
+									<div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></div>
+								</div>
+						 </div>
+						 <div class="div_con1">
+						 	<div class="div_con2">
+								<label for="password">Password</label>
+								<input type="password" name="password" id="password" th:field="*{password}"/>
+							</div>
+								<div class="password_err errors" >
+									<div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+								</div>
+						  </div>	
+						  <div class="div_con1">
+						  	<div class="div_con2">
+								<label for="checkPass">Check password</label>
+								<input type="password" name="checkPass" id="checkPass" th:field="*{confirmPassword}"/>
+							</div>
+								<div class="checkPass_err errors" >
+									<div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></div>
+								</div>
+						   </div>
+						   <div class="div_con1">
+						  	 <div class="div_con2">
+								<label for="firstName">First name</label>
+								<input type="text" name="firstName" id="firstName" th:field="*{firstName}"/>
+							 </div>
+								<div  class="firstName_err errors" >
+									<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+								</div>
+							</div>
+							<div class="div_con1">
+							 <div class="div_con2">
+								<label for="lastName">Last name</label>
+								<input type="text" name="lastName" id="lastName" th:field="*{lastName}"/>
+							 </div>
+								<div class="lastName_err errors">
+									<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+								</div>
+							</div>
+							<div class="div_con1">
+							 <div class="div_con2">
+								<label for="email">Email</label>
+								<input type="text" name="email" id="email" th:field="*{email}"/>
+							 </div>
+								<div class="email_err errors">
+									<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+								</div>
+							</div>
+							<div class="div_con1">
+							 <div class="div_con2">
+								<label for="address">Address</label>
+								<input type="text" name="address" id="address" th:field="*{address}"/>
+							 </div>
+								<div class="address_err errors">
+									<div th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+								</div>
+							</div>
+							<div class="div_con1">
+							 <div class="div_con2">
+								<label for="phoneNumber">Phone number</label>
+								<input type="text" name="phoneNumber" id="phoneNumber" th:field="*{phoneNumber}"/>
+							 </div>
+								<div class="phone_err errors">
+									<div th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></div>
+								</div>
+							</div>	
+							<br />
+							<div class="div_control_buttons">
+								<input type="submit" value = "Register" />
+							 	<input type="reset" value = "Reset"/>
+							</div>
+					</form>
+			</div><!-- div_registration_form -->
+		</div><!--div_registration_cont -->
+	</div> <!-- div_main -->
+	
+	<script type="text/javascript" src="reg_validation.js" th:src="@{|/js/registration_form_on_client_validatator.js|}"></script>
+</body>
+</html>

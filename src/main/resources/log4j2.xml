@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+ 
+    <!-- Logging Properties -->
+    <Properties>
+        <Property name="LOG_PATTERN"> [%p] %d{yyyy-MM-dd'T'HH:mm:ss} %m%n</Property>
+        <Property name="LOG_PATTERN_CONSOLE">[%p] %m%n</Property>
+    </Properties>
+     
+    <Appenders>
+     
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN_CONSOLE}"/>
+        </Console>
+         
+        <!-- File Appenders on need basis --> 
+         
+        <File name="perfLog" fileName="/log/sysLogs.log" >
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </File>   
+    </Appenders>
+ 
+    <Loggers>
+        <Logger name="org.springframework" additivity="false" level="WARN">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <Logger name="fileLogger" additivity="false" level="WARN">
+        	<AppenderRef ref="perfLog"/>
+        </Logger>
+                 
+        <Root level="DEBUG">
+            <AppenderRef ref="Console"/>
+        </Root>
+ 
+    </Loggers>
+ 
+</Configuration>
+
+	

@@ -1,0 +1,91 @@
+body{
+  background-image: url()
+}
+.div_main{
+    padding-bottom: 9.75em;
+    position: relative;
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    font-size:16px;
+}
+div{
+  display: block;
+}
+.div_form_container {
+    float: left;
+    position: relative;
+    margin-top: 2.5em;
+    margin-left: 4.1%;
+    width: 25.5%;
+    max-width: 23em;
+    min-width: 17em;
+    padding-bottom: 9.5em;
+    margin-right: 4%;
+    //border: 1px solid;//!!!!!!!!!!!!!
+}
+.div_form_box{
+  //border:1px solid;/!!!!!!!!!!!!!!!!
+}
+.div_form{
+  background-color: #d2fcea;
+  border: 1px solid #695f5f;
+  width: auto;;
+  height: auto;
+  border-radius: 5%;
+  text-align: left;
+  padding: 20px;
+}
+.div_registration{
+   
+    display: block;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    //border: 1px solid ;
+}
+.logo{
+  display:block;
+  margin:auto;
+  width: 80px;
+  heigth: 40px;
+}
+.div_ci1 label, .div_ci2 {
+  display: inline-block; 
+  font-family: Times, serif;
+}
+.div_ci1{
+  width:100%;
+}
+.div_ci2{
+  width:70%;
+}
+.div_login_input{
+  margin-left: 23px;
+}
+input[type="text"], input[type="password"]{
+  width: 100%;
+  min-width: 10em;
+  max-width: 15em;
+  /border: 1px solid #695f5f;
+  border-radius: 3px;
+}
+.login_button_div{
+  display:block;
+  margin: auto;
+ 
+}
+#login_button{
+  width: 14em;
+  display: block;
+  margin: auto;
+  border-radius: 5px;
+  background: silver;
+  position: relative;
+	box-sizing: border-box;
+	transition: all 500ms ease;
+}
+.div_recovery {
+  text-align: center;
+  margin: 5px 0px 5px 0px;
+}

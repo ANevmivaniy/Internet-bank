@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css"  href="/static/css/login_page.css" th:href="@{/css/login_page.css}">
+
+  <title><p>Кредит-Банк</p></title>
+</head>
+<body th:style="'background:url(' + @{/img/nature_wonderful-green-natures-widescreen_02-1440x900.jpg} + ');'">
+    <div class="div_main">
+      <div class= "div_form_container">
+        <div class="div_form_box">
+          <div class = "div_form">
+            <form  action="#" th:action="@{/logining}" th:object="${login}" method="POST">
+              <img class="logo" th:src="@{/img/logo.jpg}" alt="logo" /><br/>
+              <div class="div_login div_ci1">
+	              <label for="username">Login</label>
+	              <div class="div_login_input div_ci2">
+	              	 <input type="text" id="username" name="username" th:field="*{userName}" placeholder="your username" required/>
+	              </div>
+              </div>
+               <p class="errors" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></p>
+                <div class="div_password div_ci1">
+	                <label for="password">Password</label>
+	                <div class="div_ps_input div_ci2">
+	                	<input type="password" id="password" name="password" th:field="*{password}" placeholder="your password" required/> 
+	                </div>
+                </div>
+                 <p class="errors" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">                       </p>
+               <div >
+                   <p class="errors" th:if="${error}" th:text = "${error}"></p>
+               </div>
+               <div class="login_button_div">
+                  <input id="login_button" type="submit" value="Login"/>
+               </div>
+               
+             </form>
+             <div class="div_recovery">
+               <a href=#>Забыли логин или пароль</a>
+             </div>
+             </div><!--div_form -->
+        </div><!-- div_form_box -->
+          <div class="div_registration" >
+               <a th:href="@{/registration}" >Регистрация</a>
+                <br>
+               <a th:href="@{/main}" >main</a>
+           </div><!-- div_registration -->
+       </div> <!-- div_form_conteiner -->
+  </div> <!-- div_main -->
+		 
+</body>
+</html>
